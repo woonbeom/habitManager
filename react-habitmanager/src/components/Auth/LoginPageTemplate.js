@@ -1,20 +1,25 @@
 import React from 'react';
-import './loginPageTemplate.css';
+import './LoginPageTemplate.css';
 
-const loginPageTemplate = ({form, children}) => {
+const Positioner = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
+const LoginPageTemplate = ({form, children}) => {
     return (
-        <main className="login-page-template">
-            <div className="title">
-                로그인 페이지
-            </div>
-            <section className="form-wrapper">
-                {form}
-            </section>
-            <section className="todos-wrapper">
-                {children}
-            </section>
-        </main>
+        <Positioner>
+            <ShadowBox>
+                <LogoWrapper>
+                    <Logo to="/">HERUM</Logo>
+                </LogoWrapper>
+                <Contents>
+                    {children}
+                </Contents>
+            </ShadowBox>
+        </Positioner>
     );
 };
 
-export default loginPageTemplate;
+export default LoginPageTemplate;
