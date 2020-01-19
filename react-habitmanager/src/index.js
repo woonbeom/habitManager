@@ -8,11 +8,15 @@ import './index.css';
 // import App from './App';
 import Root from './Root';
 import * as serviceWorker from './serviceWorker';
+import configureStore from 'redux/configureStore';
+
+// 스토어 생성.
+const store = configureStore();
 
 // App.js의 내용들을 가져와서 render.
 // ReactDOM.reder(컴포넌트, 조합 대상 요소);
 // ReactDOM.render(<App />, document.getElementById('root')); // root 태그에 App 컴포넌트를 포함시킨다.
-ReactDOM.render(<Root />, document.getElementById('root')); // root 태그에 App 컴포넌트를 포함시킨다.
+ReactDOM.render(<Root store={store}/>, document.getElementById('root')); // root 태그에 App 컴포넌트를 포함시킨다.
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
