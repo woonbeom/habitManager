@@ -1,3 +1,4 @@
+// App.js <- 루트 컴포넌트.
 // 컴포넌트들을 정의.
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
