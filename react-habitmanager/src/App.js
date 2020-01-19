@@ -10,8 +10,9 @@ import { Home, Auth } from 'pages';
 class App extends Component {
   render() {
     return (
+      // 라우트 정의
       <div>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home} /> 
         <Route path="/auth" component={Auth} />
       </div>
     );
