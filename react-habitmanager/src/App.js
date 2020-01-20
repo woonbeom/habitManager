@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Home, Auth } from 'pages';
+import HeaderContainer from 'containers/Base/HeaderContainer';
 
 // Component class 상속.
 // Component class는 컴포넌트의 기반이 되는 클래스.
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       // 라우트 정의
       <div>
+        <HeaderContainer/>
         <Route exact path="/" component={Home} /> 
         <Route path="/auth" component={Auth} />
       </div>
