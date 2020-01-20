@@ -159,6 +159,7 @@ module.exports = function(webpackEnv) {
       // require.resolve('webpack/hot/dev-server'),
       isEnvDevelopment &&
         require.resolve('react-dev-utils/webpackHotDevClient'),
+      'react-hot-loader/patch',
       // Finally, this is your app's code:
       paths.appIndexJs,
       // We include the app code last so that if there is a runtime error during
@@ -373,19 +374,21 @@ module.exports = function(webpackEnv) {
                   'babel-preset-react-app/webpack-overrides'
                 ),
                 
-                plugins: [
-                  [
-                    require.resolve('babel-plugin-named-asset-import'),
-                    {
-                      loaderMap: {
-                        svg: {
-                          ReactComponent:
-                            '@svgr/webpack?-svgo,+titleProp,+ref![path]',
-                        },
-                      },
-                    },
-                  ],
-                ],
+                // plugins: [
+                //   [
+                //     require.resolve('babel-plugin-named-asset-import'),
+                //     {
+                //       loadermap: {
+                //         svg: {
+                //           reactcomponent:
+                //             '@svgr/webpack?-svgo,+titleprop,+ref![path]',
+                //         },
+                //       },
+                //     },
+                //   ],
+                // ],
+
+                plugins: ['react-hot-loader/babel'],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
                 // directory for faster rebuilds.
